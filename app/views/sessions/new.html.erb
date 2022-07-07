@@ -1,0 +1,13 @@
+<h1 class="text-center">Log in</h1>
+<div class="mx-auto border bg-light" style="width: 50%;">
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+
+    <%= f.label :email ,class: "form-label"%>
+    <%= f.email_field :email ,class: "form-control w-75 mx-auto"%>
+
+    <%= f.label :password ,class: "form-label"%>
+    <%= f.password_field :password ,class: "form-control w-75 mx-auto"%>
+
+    <%= f.submit "Log in" , class: "btn btn-primary w-75 mx-auto m-2"%>
+    <% end %>
+</div>
