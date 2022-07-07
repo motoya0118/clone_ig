@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">Image</th>
       <th scope="col">Content</th>
+      <th scope="col">Writer</th>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
       <tr>
         <td scope="row"><%= image_tag picture.image.url %></td>
         <td><%= picture.content %></td>
+        <td><%= picture.user.name %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
         <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>

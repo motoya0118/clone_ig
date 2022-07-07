@@ -26,6 +26,7 @@ class PicturesController < ApplicationController
   # POST /pictures or /pictures.json
   def create
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
 
     respond_to do |format|
       if @picture.save
@@ -63,6 +64,7 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
   end
   private
     # Use callbacks to share common setup or constraints between actions.
