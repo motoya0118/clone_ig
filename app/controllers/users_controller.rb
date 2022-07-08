@@ -64,13 +64,14 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-      redirect_to users_path, notice: "他者のアカウント情報は変更不可です" unless @user.name == current_user.name
-    end
+  def set_user
+    @user = User.find(params[:id])
+    redirect_to users_path, notice: "他者のアカウント情報は変更不可です" unless @user.name == current_user.name
+  end
 
     # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation,:image)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation,:image)
+  end
+
 end
