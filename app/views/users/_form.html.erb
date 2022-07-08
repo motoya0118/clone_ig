@@ -32,6 +32,13 @@
       <%= form.password_field :password_confirmation ,class: "form-control w-75 mx-auto"%>
     </div>
 
+    <% if action_name == "edit" %>
+      <div class="field">
+        <%= form.label :my_picture ,class: "form-label"%>
+        <%= form.file_field :image,class: "form-control form-control w-75 mx-auto" %>
+      </div>
+    <% end %>
+
     <div class="actions">
       <%= form.submit "Create Account", class: "btn btn-primary w-75 mx-auto m-2"%>
     </div>
