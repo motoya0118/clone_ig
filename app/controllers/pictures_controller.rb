@@ -28,13 +28,11 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
-
     if @picture.save
       ContactMailer.contact_mail(@picture).deliver  ##追記
       redirect_to pictures_path, notice: 'Contact was successfully created.'
     else
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @picture.errors, status: :unprocessable_entity }
+      render :new
     end
   end
 
@@ -65,7 +63,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
   end
-  
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_picture
