@@ -10,5 +10,14 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>プロフィール写真:</strong>
+  <% if not @user.image.url.nil? %>
+    <%= image_tag @user.image.url %>
+  <% else %>
+    未登録
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

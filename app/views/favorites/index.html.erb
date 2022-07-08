@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>お気に入り一覧</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Content</th>
+      <th scope="col">Writer</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @favorites.nil? %>
+      <p> お気に入り未登録です </p>
+    <% else %>
+      <% @favorites.each do |favorite| %>
+        <tr>
+          <td scope="row"><%= image_tag favorite.picture.image.url %></td>
+          <td><%= favorite.picture.content %></td>
+          <td><%= favorite.picture.user.name %></td>
+          <td><%= link_to 'Destroy', favorite_path(id: favorite.id), method: :delete %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
