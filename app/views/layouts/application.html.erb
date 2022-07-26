@@ -10,14 +10,14 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light justify-content-start" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-light justify-content-start mb-2">
       <% if logged_in? %>
-        <%= link_to "写真一覧", pictures_path ,class: "nav-link"%>
-        <%= link_to "写真投稿", new_picture_path ,class: "nav-link"%>
-        <%= link_to "お気に入り一覧", favorites_path ,class: "nav-link"%>
-        <%= link_to "マイプロフィール", user_path(current_user.id) ,class: "nav-link"%>
-        <%= link_to "プロフィール編集", edit_user_path(current_user.id) ,class: "nav-link"%>
-        <%= link_to "Logout", session_path(current_user.id), method: :delete ,class: "nav-link"%>
+        <%= link_to "写真一覧", pictures_path ,class: "nav-link border-right text-white hover-overlay ripple shadow-1-strong rounded"%>
+        <%= link_to "写真投稿", new_picture_path ,class: "nav-link border-right text-white"%>
+        <%= link_to "お気に入り一覧", favorites_path ,class: "nav-link border-right text-white"%>
+        <%= link_to "マイプロフィール", user_path(current_user.id) ,class: "nav-link border-right text-white"%>
+        <%= link_to "プロフィール編集", edit_user_path(current_user.id) ,class: "nav-link border-right text-white"%>
+        <%= link_to "Logout", session_path(current_user.id), method: :delete ,class: "nav-link text-white"%>
       <% else %>
         <%= link_to "Sign up", new_user_path ,class: "nav-link"%>
         <%= link_to "Login", new_session_path ,class: "nav-link"%>

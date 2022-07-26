@@ -1,6 +1,6 @@
 <h1 class="text-center">Log in</h1>
 
-<div class="mx-auto border bg-light" style="width: 50%;">
+<div class="mx-auto" style="width: 50%;">
   <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
     <%= f.label :email ,class: "form-label"%>
     <%= f.email_field :email ,class: "form-control w-75 mx-auto"%>
