@@ -19,12 +19,12 @@
         <%= link_to "プロフィール編集", edit_user_path(current_user.id) ,class: "nav-link border-right text-white"%>
         <%= link_to "Logout", session_path(current_user.id), method: :delete ,class: "nav-link text-white"%>
       <% else %>
-        <%= link_to "Sign up", new_user_path ,class: "nav-link"%>
-        <%= link_to "Login", new_session_path ,class: "nav-link"%>
+        <%= link_to "Sign up", new_user_path ,class: "nav-link border-right text-white"%>
+        <%= link_to "Login", new_session_path ,class: "nav-link text-white"%>
       <% end %>
     </nav>
     <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
+      <%= content_tag(:p, value, class: "#{key} text-info display-5") %>
     <% end %>
     <%= yield %>
   </body>

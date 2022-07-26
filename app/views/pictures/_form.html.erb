@@ -10,19 +10,19 @@
       </ul>
     </div>
   <% end %>
-  <div class="bg-light">
+  <div>
     <div class="field mb-3">
       <%= form.label :image,class: "form-label text-center"%>
       <!-- 確認画面から新規作成画面に戻った時に、 -->
       <!-- アップロードした画像を表示させるための記述 -->
       <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
-      <%= form.file_field :image,class: "form-control form-control w-75" %>
+      <%= form.file_field :image,class: "form-control form-control w-75 mx-auto" %>
       <%= form.hidden_field :image_cache %>
     </div>
 
     <div class="field mb-3 mx-auto">
       <%= form.label :content ,class: "form-label"%>
-      <%= form.text_field :content ,class: "form-control w-75"%>
+      <%= form.text_field :content ,class: "form-control w-75 mx-auto"%>
     </div>
 
     <div class="actions text-center">
